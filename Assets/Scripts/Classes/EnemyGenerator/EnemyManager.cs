@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class EnemyManager : Enemy
 {
@@ -14,8 +15,29 @@ public class EnemyManager : Enemy
     string silahName;
 
     [SerializeField] private HeroManager _target;
+    
+    public RectTransform damageRect, missRect;
 
-    private int mevcutCan;
+    public int Can
+    {
+        get { return this.can; }
+        set
+        {
+            if (this.can < value)
+            {
+                // iyilesme
+                this.can = value;
+            }
+            else
+            {
+                // damage yedi
+                this.can = value;
+                // pop up cikacak
+                setPopup();
+            }
+        }
+    }
+
     
 
     void Awake()
@@ -26,25 +48,9 @@ public class EnemyManager : Enemy
     }
     void Start()
     {
-        mevcutCan = this.can;
 
     }
-    void Update()
-    {
-
-        if (can == mevcutCan)
-        {
-
-        }
-        else
-        {
-            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-           
-            mevcutCan = this.can;
-            Destroy(popup, 20f);
-        }
-    }
-
+     
     public void Setup(int damageAmount,string situation)
     {
         
@@ -90,9 +96,9 @@ public class EnemyManager : Enemy
             if (Random.Range(0, etki) > _target.kacinma) // ıska mı değil mi 
             {     // target a hasar ver 
                 Setup(etki,"a");
-                _target.can -= (etki - _target.defans);
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                _target.Can -= (etki - _target.defans);
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
             else
@@ -109,17 +115,25 @@ public class EnemyManager : Enemy
             {
                 // target a hasar ver 
                 Setup(etki, "a");
-                _target.can -= (etki - _target.defans);
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                _target.Can -= (etki - _target.defans);
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
         }
 
+      
 
         // atak bitti 
         yield return new WaitForSeconds(1);
         StartCoroutine(_target.Attack());
 
     }
+    
+    private void setPopup()
+    {
+            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+            Destroy(popup, 4f);
+    }
+
 }

@@ -19,10 +19,31 @@ public class HeroManager : MonoBehaviour
     public int kacinma;
     public int can;
 
-    private int mevcutCan;
+    
 
     // target bulundugu odadan random cekilcek
     [SerializeField] private EnemyManager _target;
+
+    public int Can
+    {
+        get { return this.can; }
+        set
+        {
+            if (this.can < value)
+            {
+                // iyilesme
+                this.can = value;
+            }
+            else
+            {
+                // damage yedi
+                this.can = value;
+                // pop up cikacak
+                setPopup();
+            }
+        }
+    }
+
     public void Awake()
     {
         InitializeVariables();
@@ -51,21 +72,6 @@ public class HeroManager : MonoBehaviour
         can = _heroScriptable.can;
     }
 
-    private void Update()
-    {
-        if (can == mevcutCan)
-        {
-
-        }
-        else
-        {
-            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-
-            mevcutCan = this.can;
-            Destroy(popup, 20f);
-        }
-    }
-
 
     public IEnumerator Attack()
     {
@@ -76,11 +82,11 @@ public class HeroManager : MonoBehaviour
             if (Random.Range(0, yakin_etki) > _target.kacinma) // ıska mı değil mi 
             {     // target a hasar ver 
                 Setup(yakin_etki,"a");
-                _target.can -= (yakin_etki - _target.defans);
+                _target.Can -= (yakin_etki - _target.defans);
                 
                 
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
             else
@@ -97,9 +103,9 @@ public class HeroManager : MonoBehaviour
             {
                 // target a hasar ver
                 Setup(yakin_etki,"a");
-                _target.can -= (yakin_etki - _target.defans);
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                _target.Can -= (yakin_etki - _target.defans);
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
         }
@@ -109,4 +115,11 @@ public class HeroManager : MonoBehaviour
         StartCoroutine(_target.Attack());
 
     }
+
+    private void setPopup()
+    {
+        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+        Destroy(popup, 4f);
+    }
+
 }
