@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8919e1f3daf8377449d3d58631839c20, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  name: Boss
+  yakin_etki: 35
+  uzak_etki: 0
+  iyilestirme: 20
+  ganimet: 100
+  defans: 5
+  kacinma: 5
+  can: 500
