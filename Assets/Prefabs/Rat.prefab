@@ -113,6 +113,8 @@ MonoBehaviour:
   defans: 0
   kacinma: 0
   can: 0
+  missColor: {r: 0.023529412, g: 0.12156863, b: 1, a: 1}
+  attackColor: {r: 0.90588236, g: 0.09803922, b: 0.09803922, a: 1}
   _target: {fileID: 0}
 --- !u!114 &5213850478974049146
 MonoBehaviour:

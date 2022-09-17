@@ -2196,9 +2196,12 @@ MonoBehaviour:
   - {fileID: 5889990929741490118}
   - {fileID: 5889990930536467856}
   floatingPoint: {fileID: 1626989694447086156, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
+  healColor: {r: 0.05240294, g: 0.8679245, b: 0.15935665, a: 1}
+  missColor: {r: 0.02264148, g: 0.1196381, b: 1, a: 1}
+  attackColor: {r: 0.9056604, g: 0.09740115, b: 0.09740115, a: 1}
+  _maxEnemyHeatlh: 0
+  hasPotion: 1
   _target: {fileID: 0}
-  damageRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
-  missRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
 --- !u!114 &5889990930502522037
 MonoBehaviour:
   m_ObjectHideFlags: 0

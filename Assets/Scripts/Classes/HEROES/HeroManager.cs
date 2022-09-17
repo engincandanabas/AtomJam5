@@ -19,7 +19,9 @@ public class HeroManager : MonoBehaviour
     public int kacinma;
     public int can;
 
-
+    
+    public Color missColor;
+    public Color attackColor;
 
     // target bulundugu odadan random cekilcek
     public EnemyManager _target;
@@ -95,7 +97,9 @@ public class HeroManager : MonoBehaviour
             else
             {
                 Setup(-1, "miss");
-                Instantiate(floatingPoint, _target.transform.position, Quaternion.identity);
+                GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+                healPopup.GetComponent<TextMeshPro>().color = missColor;
+                PopupManager.instance.popupList.Add(healPopup);
                 Debug.Log(_target.name + " kaçýndý");
             }
 
@@ -119,8 +123,9 @@ public class HeroManager : MonoBehaviour
 
     private void setPopup()
     {
-        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-        Destroy(popup, 4f);
+        GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+        healPopup.GetComponent<TextMeshPro>().color = attackColor;
+        PopupManager.instance.popupList.Add(healPopup);
     }
 
 }

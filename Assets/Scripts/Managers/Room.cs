@@ -20,7 +20,7 @@ public class Room : MonoBehaviour
     public List<EnemyManager> enemyManagers = new List<EnemyManager>();
 
     public bool _enemyTurn = false;
-
+    
     private void Awake()
     {
         StartCoroutine(WarControl());
@@ -54,7 +54,25 @@ public class Room : MonoBehaviour
                         if (targetHero != null)
                         {
                             currentEnemy._target = targetHero;
-                            currentEnemy.Attack();
+                            if (currentEnemy.Can < currentEnemy._maxEnemyHeatlh/5 && currentEnemy.hasPotion)
+                            {
+                                // iyilesitrme
+                             
+                                currentEnemy.Can = currentEnemy.Can +25;
+                                Debug.Log(currentEnemy.name + "iyileþtirme yaptý "+ 25);
+                                Debug.Log(currentEnemy.name + "mevcut can "+ currentEnemy.Can);
+
+                                currentEnemy.hasPotion = false;
+                                // can+=
+                            }
+                            else
+                            {
+                                currentEnemy.Attack();
+                                Debug.Log("saldýrýya girdi");
+                                // attack
+                            }
+
+                            
                         }
                     }
                 }
