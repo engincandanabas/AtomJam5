@@ -104,7 +104,8 @@ public class EnemyManager : Enemy
             else
             {
                 Setup(-1, "Miss");
-                Instantiate(floatingPoint, _target.transform.position, Quaternion.identity);
+                PopupManager.instance.popupList.Add(Instantiate(floatingPoint, _target.transform.position, Quaternion.identity));
+
                 Debug.Log(_target.name + " kaçındı");
             }
 
@@ -125,15 +126,15 @@ public class EnemyManager : Enemy
       
 
         // atak bitti 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(_target.Attack());
 
     }
     
     private void setPopup()
     {
-            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-            Destroy(popup, 4f);
+        PopupManager.instance.popupList.Add(Instantiate(floatingPoint, _target.transform.position, Quaternion.identity));
+
     }
 
 }

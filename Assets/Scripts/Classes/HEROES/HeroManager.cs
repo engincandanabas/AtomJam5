@@ -92,7 +92,8 @@ public class HeroManager : MonoBehaviour
             else
             {
                 Setup(-1, "miss");
-                Instantiate(floatingPoint, _target.transform.position, Quaternion.identity);
+                PopupManager.instance.popupList.Add(Instantiate(floatingPoint, _target.transform.position, Quaternion.identity));
+
                 Debug.Log(_target.name + " kaçýndý");
             }
 
@@ -118,8 +119,8 @@ public class HeroManager : MonoBehaviour
 
     private void setPopup()
     {
-        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-        Destroy(popup, 4f);
+        PopupManager.instance.popupList.Add(Instantiate(floatingPoint, _target.transform.position, Quaternion.identity));
+
     }
 
 }
