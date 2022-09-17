@@ -9,11 +9,11 @@ public class AIPathFinder : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float radius;
 
-    private Vector3 target;
+    private Transform target;
     void Start()
     {
         rooms = PathManager.instance._rooms;
-        SetFirstTarget();
+        SetTarget();
     }
 
     // Update is called once per frame
@@ -21,22 +21,43 @@ public class AIPathFinder : MonoBehaviour
     {
         if(target!=null)
         {
-            Vector2 dir = target - transform.position;
+            Vector2 dir = target.position - transform.position;
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-            if (Vector2.Distance(transform.position, target) <= 0.1f)
+            if (Vector2.Distance(transform.position, target.position) <= 0.1f)
             {
                 SetTarget();
             }
         }
     }
-    void SetFirstTarget()
-    {
-        
-    }
+    
     void SetTarget()
     {
-        
+        var _target = target;
+        target = null;
+        //check current target fight or pass
+        if(_target != null && rooms.Count > 0)
+        {
+            if(_target.transform.parent.GetComponent<Room>().heroManagers.Count>0)
+            {
+                this.transform.parent = _target.transform.parent.GetComponent<Room>()._enemyLayoutGroup.transform;
+                //saldiri baslayacak
+                Debug.Log("Bu odada savas baslayacak");
+            }
+            else
+            {
+                // dusman yok yeni odaya git
+                // first target
+                target = rooms[rooms.Count - 1]._enemyLayoutGroup.transform;
+                rooms.Remove(rooms[rooms.Count - 1]);
+            }
+        }
+        else
+        {
+            // first target
+            target=rooms[rooms.Count-1]._enemyLayoutGroup.transform;
+            rooms.Remove(rooms[rooms.Count-1]);
+        }
     }
     Room GetRoom(Vector2 center, float radius)
     {
@@ -59,7 +80,7 @@ public class AIPathFinder : MonoBehaviour
         if(target != null)
         {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(target, radius);
+        Gizmos.DrawSphere(target.position, radius);
         }
     }
 }

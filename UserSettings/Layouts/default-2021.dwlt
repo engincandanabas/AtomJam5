@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 36471
+  controlID: 69
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 36446
+  controlID: 86
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 36400
+  controlID: 21
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 497
     height: 551
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -549,9 +549,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.72, y: 1.25, z: 0}
+    m_Target: {x: -7.567462, y: 1.5810895, z: -0.016288564}
     speed: 2
-    m_Value: {x: 2.72, y: 1.25, z: 0}
+    m_Value: {x: -7.567462, y: 1.5810895, z: -0.016288564}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -602,9 +602,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.7853575
+    m_Target: 8.478392
     speed: 2
-    m_Value: 1.7853575
+    m_Value: 8.478392
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -782,7 +782,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: cadcfdffe2ddfdffdadefdff20dffdff76dffdff38e0fdff7ee0fdffa2e1fdff70e9fdffa0e9fdffd2e9fdff02ebfdff46f0fdff5af1fdff50f2fdffb0f2fdff0ef5fdff10f5fdff46f5fdff8cf5fdff10f7fdff5ef8fdfffcfafdffc0fbfdff6403feff7016feffbe16feff0417feff5e17feff2018feff6618feffd022feffba26fefff23afeffb43cfeff3861feffa661feff2062feffacdafeff2cdbfeff2cdefeff1cfdfeff1efdfeff34fefeff20fffeff646effff2671ffff0272ffff5c72ffff2a73ffff7674ffff8a75ffffe475ffffe676ffffb699ffff28fbffff9e5f0000ce5f00000860000034600000386000004460000058600000666000006a60000028a80000d6110100041201005c120100
+      m_ExpandedIDs: 24e5ffff14ebffffeaebffff1eecffff38f9ffff20fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -847,22 +847,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Classes/EnemyGenerator
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Classes/EnemyGenerator
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Unity_Projects\GitHub\AtomGameJam5
+  m_LastProjectPath: D:\Unity_Projects\GitHub\AtomJam5
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 00610000
-    m_LastClickedID: 24832
-    m_ExpandedIDs: 00000000e4600000e6600000e860000000ca9a3b
+    scrollPos: {x: 0, y: 137}
+    m_SelectedIDs: 5e600000
+    m_LastClickedID: 24670
+    m_ExpandedIDs: 00000000a45f0000a65f0000a85f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -890,7 +890,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4600000e6600000e860000000ca9a3b
+    m_ExpandedIDs: 00000000a45f0000a65f0000a85f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

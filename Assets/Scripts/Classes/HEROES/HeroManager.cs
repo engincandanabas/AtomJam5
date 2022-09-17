@@ -50,23 +50,6 @@ public class HeroManager : MonoBehaviour
         defans = _heroScriptable.defans;
         can = _heroScriptable.can;
     }
-
-    private void Update()
-    {
-        if (can == mevcutCan)
-        {
-
-        }
-        else
-        {
-            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-
-            mevcutCan = this.can;
-            Destroy(popup, 20f);
-        }
-    }
-
-
     public IEnumerator Attack()
     {
         Debug.Log(_heroScriptable.name);

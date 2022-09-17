@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class EnemyManager : Enemy
 {
@@ -15,8 +16,29 @@ public class EnemyManager : Enemy
 
     [SerializeField] private HeroManager _target;
 
-    private int mevcutCan;
-    
+    public RectTransform damageRect, missRect;
+
+    public int Can
+    {
+        get { return this.can; }
+        set
+        {
+            if (this.can < value)
+            {
+                // iyilesme
+                this.can = value;
+            }
+            else
+            {
+                // damage yedi
+                this.can = value;
+                // pop up cikacak
+                setPopup();
+            }
+        }
+    }
+
+
 
     void Awake()
     {
@@ -26,28 +48,12 @@ public class EnemyManager : Enemy
     }
     void Start()
     {
-        mevcutCan = this.can;
 
     }
-    void Update()
+
+    public void Setup(int damageAmount, string situation)
     {
 
-        if (can == mevcutCan)
-        {
-
-        }
-        else
-        {
-            GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-           
-            mevcutCan = this.can;
-            Destroy(popup, 20f);
-        }
-    }
-
-    public void Setup(int damageAmount,string situation)
-    {
-        
         if (damageAmount == -1)
         {
             floatingPoint.GetComponent<TextMeshPro>().SetText(situation);
@@ -59,22 +65,22 @@ public class EnemyManager : Enemy
     }
     void SetupEnemy()
     {
-        var _irk=_irklar[Random.Range(0,_irklar.Length)];
-        var _sinif=_siniflar[Random.Range(0,_siniflar.Length)];
-        var _cinsiyet=_cinsiyetler[Random.Range(0,_cinsiyetler.Length)];
-        var _silah=_silahlar[Random.Range(0,_silahlar.Length)];
+        var _irk = _irklar[Random.Range(0, _irklar.Length)];
+        var _sinif = _siniflar[Random.Range(0, _siniflar.Length)];
+        var _cinsiyet = _cinsiyetler[Random.Range(0, _cinsiyetler.Length)];
+        var _silah = _silahlar[Random.Range(0, _silahlar.Length)];
 
-        this.yakin_etki+=_irk.yakin_etki+_sinif.yakin_etki+_cinsiyet.yakin_etki+_silah.yakin_etki;
-        this.uzak_etki+=_irk.uzak_etki+_sinif.uzak_etki+_cinsiyet.uzak_etki+_silah.uzak_etki;
-        this.iyilestirme+=_irk.iyilestirme+_sinif.iyilestirme+_cinsiyet.iyilestirme+_silah.iyilestirme;
-        this.ganimet+=_irk.ganimet+_sinif.ganimet+_cinsiyet.ganimet+_silah.ganimet;
-        this.defans+=_irk.defans+_sinif.defans+_cinsiyet.defans+_silah.defans;
-        this.kacinma+=_irk.kacinma+_sinif.kacinma+_cinsiyet.kacinma+_silah.kacinma;
-        this.can+=_irk.can+_sinif.can+_cinsiyet.can+_silah.can;
+        this.yakin_etki += _irk.yakin_etki + _sinif.yakin_etki + _cinsiyet.yakin_etki + _silah.yakin_etki;
+        this.uzak_etki += _irk.uzak_etki + _sinif.uzak_etki + _cinsiyet.uzak_etki + _silah.uzak_etki;
+        this.iyilestirme += _irk.iyilestirme + _sinif.iyilestirme + _cinsiyet.iyilestirme + _silah.iyilestirme;
+        this.ganimet += _irk.ganimet + _sinif.ganimet + _cinsiyet.ganimet + _silah.ganimet;
+        this.defans += _irk.defans + _sinif.defans + _cinsiyet.defans + _silah.defans;
+        this.kacinma += _irk.kacinma + _sinif.kacinma + _cinsiyet.kacinma + _silah.kacinma;
+        this.can += _irk.can + _sinif.can + _cinsiyet.can + _silah.can;
 
         silahName = _silah.name;
 
-        Debug.Log(this.gameObject.name+" INFO \n Irk:"+_irk.name+"\nSınıf:"+_sinif.name+"\nCinsiyet:"+_cinsiyet.name+"\nSilah:"+_silah.name+"");
+        Debug.Log(this.gameObject.name + " INFO \n Irk:" + _irk.name + "\nSınıf:" + _sinif.name + "\nCinsiyet:" + _cinsiyet.name + "\nSilah:" + _silah.name + "");
     }
     public IEnumerator Attack()
     {
@@ -89,10 +95,10 @@ public class EnemyManager : Enemy
         {
             if (Random.Range(0, etki) > _target.kacinma) // ıska mı değil mi 
             {     // target a hasar ver 
-                Setup(etki,"a");
-                _target.can -= (etki - _target.defans);
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                Setup(etki, "a");
+                _target.Can -= (etki - _target.defans);
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
             else
@@ -109,12 +115,13 @@ public class EnemyManager : Enemy
             {
                 // target a hasar ver 
                 Setup(etki, "a");
-                _target.can -= (etki - _target.defans);
-                Debug.Log(_target.name + " canı " + _target.can.ToString());
-                if (_target.can <= 0)
+                _target.Can -= (etki - _target.defans);
+                Debug.Log(_target.name + " canı " + _target.Can.ToString());
+                if (_target.Can <= 0)
                     Destroy(_target.gameObject);
             }
         }
+
 
 
         // atak bitti 
@@ -122,4 +129,11 @@ public class EnemyManager : Enemy
         StartCoroutine(_target.Attack());
 
     }
+
+    private void setPopup()
+    {
+        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+        Destroy(popup, 4f);
+    }
+
 }

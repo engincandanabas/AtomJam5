@@ -7,8 +7,10 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private int _maxCapacity=4;
     [SerializeField] private int _currentCapacity=0;
-    [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
+    public VerticalLayoutGroup _heroLayoutGroup;
+    public VerticalLayoutGroup _enemyLayoutGroup;
 
+    [SerializeField] private int _currnetPassCount;
     public int MaxCapacity { get { return _maxCapacity; }}
     public int CurrentCapacity { get { return _currentCapacity; }set { _currentCapacity = value; } }
 

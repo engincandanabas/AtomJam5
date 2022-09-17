@@ -6,6 +6,7 @@ using TMPro;
 
 public class HeroesPlaceManager : MonoBehaviour
 {
+    public static HeroesPlaceManager instance;
     [Header("UI Attributes")]
     [SerializeField] private HorizontalLayoutGroup _heroesPlaceLayout;
     [SerializeField] private GameObject[] _heroesBoxes; // 0-mouse 1-dog 2-goblin 3-ogre 4-ork 5-gnoll 
@@ -17,6 +18,7 @@ public class HeroesPlaceManager : MonoBehaviour
     private GameObject _preview;
 
     void Awake() {
+        instance = this;
         InitializeVariables();
     }
     void Start()
@@ -88,13 +90,16 @@ public class HeroesPlaceManager : MonoBehaviour
             }
         }
     }
-    private void InitializeVariables()
+    public void InitializeVariables()
     {
         // test assaign 
-        for (int i = 0; i < 6; i++)
-        {
-            _heroesCounts[i] = Random.Range(0, 4);
-        }
+        // 0-mouse 1-dog 2-goblin 3-ogre 4-ork 5-gnoll 
+        _heroesCounts[0] = PlayerPrefs.GetInt("Mouse",0);
+        _heroesCounts[1] = PlayerPrefs.GetInt("Dog",0);
+        _heroesCounts[2] = PlayerPrefs.GetInt("Goblin",0);
+        _heroesCounts[3] = PlayerPrefs.GetInt("Ogre",0);
+        _heroesCounts[4] = PlayerPrefs.GetInt("Ork",0);
+        _heroesCounts[5] = PlayerPrefs.GetInt("Gnoll",0);
         CheckCount();
     }
     private void CheckCount()

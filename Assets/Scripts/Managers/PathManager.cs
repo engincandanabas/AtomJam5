@@ -11,11 +11,5 @@ public class PathManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        _rooms = new List<Room>();
-        GameObject[] _roomTag = GameObject.FindGameObjectsWithTag("Room");
-        for (int i = 0; i < _roomTag.Length; i++)
-        {
-            _rooms.Add(_roomTag[i].GetComponent<Room>());
-        }
     }
 }
