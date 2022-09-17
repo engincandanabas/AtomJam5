@@ -28,12 +28,15 @@ public class EnemyManager : Enemy
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Red)]
 
     public GameObject floatingPoint;
-    string silahName;
+    public string silahName;
 
     public HeroManager _target;
 
     public RectTransform damageRect, missRect;
 
+    private int _maxEnemyHeatlh;
+    // baslangicta iksiri var
+    public bool hasPotion = true;
     public int Can
     {
         get { return this.can; }
@@ -60,10 +63,6 @@ public class EnemyManager : Enemy
     {
         SetupEnemy();
         // baslangicta saldiri
-    }
-    void Start()
-    {
-
     }
 
     public void Setup(int damageAmount, string situation)
@@ -97,6 +96,7 @@ public class EnemyManager : Enemy
         this.kacinma += _irk.kacinma + _sinif.kacinma + _cinsiyet.kacinma + _silah.kacinma;
         this.can += _irk.can + _sinif.can + _cinsiyet.can + _silah.can;
 
+        _maxEnemyHeatlh = can;
         silahName = _silah.name;
 
         Debug.Log(this.gameObject.name + " INFO \n Irk:" + _irk.name + "\nSınıf:" + _sinif.name + "\nCinsiyet:" + _cinsiyet.name + "\nSilah:" + _silah.name + "");
