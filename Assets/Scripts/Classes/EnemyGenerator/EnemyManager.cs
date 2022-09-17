@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using NaughtyAttributes;
-
+using UnityEngine.UI;
 public class EnemyManager : Enemy
 {
     [Header("Classes")]
@@ -37,6 +37,7 @@ public class EnemyManager : Enemy
     private int _maxEnemyHeatlh;
     // baslangicta iksiri var
     public bool hasPotion = true;
+    //can degisdiğinde yapilacak diğer islemlerinde yapildigi property
     public int Can
     {
         get { return this.can; }
@@ -51,15 +52,24 @@ public class EnemyManager : Enemy
             {
                 // damage yedi
                 this.can = value;
+                // slider 
+                // detect who am i
+                EnemySpawnManager enemySpawnManager = EnemySpawnManager.Instance;
+                for(int i=0;i<enemySpawnManager._enemyList.Count;i++)
+                {
+                    if(enemySpawnManager._enemyList[i] == this)
+                    {
+                        enemySpawnManager._enemyHealthSlider[i].value = (Can * 100) / _maxEnemyHeatlh;
+                        break;
+                    }
+                }
                 // pop up cikacak
                 setPopup();
             }
         }
     }
 
-
-
-    void Awake()
+    void Start()
     {
         SetupEnemy();
         // baslangicta saldiri
@@ -102,27 +112,104 @@ public class EnemyManager : Enemy
         Debug.Log(this.gameObject.name + " INFO \n Irk:" + _irk.name + "\nSınıf:" + _sinif.name + "\nCinsiyet:" + _cinsiyet.name + "\nSilah:" + _silah.name + "");
         // 1-e 2-k 3-g 4-a
 
+        //find index
+        int _currentEnemeyIndex = -1;
+        EnemySpawnManager enemySpawnManager = EnemySpawnManager.Instance;
+        for(int i=0;i< enemySpawnManager._enemyList.Count;i++)
+        {
+            if(enemySpawnManager._enemyList[i] == this)
+            {
+                _currentEnemeyIndex = i;
+                break;
+            }
+        }
+        Debug.Log("Current Enemy : " + _currentEnemeyIndex);
+
         switch(_irk.name)
         {
             case "Human":
+                if(_currentEnemeyIndex==0)
+                {
+                    enemySpawnManager._insanSpritesFirstEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if(_currentEnemeyIndex==1)
+                {
+                    enemySpawnManager._insanSpritesSecondEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if(_currentEnemeyIndex==2)
+                {
+                    enemySpawnManager._insanSpritesThirdEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if(_currentEnemeyIndex==3)
+                {
+                    enemySpawnManager._insanSpritesFourthEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
                 DisableSprite(_insanSprites,cinsiyetRandom);
                 DisableSprite(_elfSprites, -1);
                 DisableSprite(_cuceSprites, -1);
                 DisableSprite(_hobbitSprites, -1);
                 break;
             case "Elf":
+                if (_currentEnemeyIndex == 0)
+                {
+                    enemySpawnManager._elfSpritesFirstEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 1)
+                {
+                    enemySpawnManager._elfSpritesSecondEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 2)
+                {
+                    enemySpawnManager._elfSpritesThirdEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 3)
+                {
+                    enemySpawnManager._elfSpritesFourthEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
                 DisableSprite(_elfSprites, cinsiyetRandom);
                 DisableSprite(_insanSprites, -1);
                 DisableSprite(_cuceSprites, -1);
                 DisableSprite(_hobbitSprites, -1);
                 break;
             case "Dwarf":
+                if (_currentEnemeyIndex == 0)
+                {
+                    enemySpawnManager._cuceSpritesFirstEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 1)
+                {
+                    enemySpawnManager._cuceSpritesSecondEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 2)
+                {
+                    enemySpawnManager._cuceSpritesThirdEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 3)
+                {
+                    enemySpawnManager._cuceSpritesFourthEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
                 DisableSprite(_cuceSprites, cinsiyetRandom);
                 DisableSprite(_insanSprites, -1);
                 DisableSprite(_elfSprites, -1);
                 DisableSprite(_hobbitSprites, -1);
                 break;
             case "Halfling":
+                if (_currentEnemeyIndex == 0)
+                {
+                    enemySpawnManager._hobbitSpritesFirstEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 1)
+                {
+                    enemySpawnManager._hobbitSpritesSecondEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 2)
+                {
+                    enemySpawnManager._hobbitSpritesThirdEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
+                else if (_currentEnemeyIndex == 3)
+                {
+                    enemySpawnManager._hobbitSpritesFourthEnemy[cinsiyetRandom].gameObject.SetActive(true);
+                }
                 DisableSprite(_hobbitSprites, cinsiyetRandom);
                 DisableSprite(_insanSprites, -1);
                 DisableSprite(_elfSprites, -1);
@@ -131,7 +218,47 @@ public class EnemyManager : Enemy
         }
         DisableSprite(_siniflarSprites, sinifRandom);
         DisableSprite(_silahlarSprites,silahRandom);
+        if (_currentEnemeyIndex == 0)
+        {
+            enemySpawnManager._silahlarSpritesFirstEnemy[silahRandom].gameObject.SetActive(true);
+            enemySpawnManager._siniflarSpritesFirstEnemy[sinifRandom].gameObject.SetActive(true);
+        }
+        else if (_currentEnemeyIndex == 1)
+        {
+            enemySpawnManager._silahlarSpritesSecondEnemy[silahRandom].gameObject.SetActive(true);
+            enemySpawnManager._siniflarSpritesSecondEnemy[sinifRandom].gameObject.SetActive(true);
+        }
+        else if (_currentEnemeyIndex == 2)
+        {
+            enemySpawnManager._silahlarSpritesThirdEnemy[silahRandom].gameObject.SetActive(true);
+            enemySpawnManager._siniflarSpritesThirdEnemy[sinifRandom].gameObject.SetActive(true);
+        }
+        else if (_currentEnemeyIndex == 3)
+        {
+            enemySpawnManager._silahlarSpritesFourthEnemy[silahRandom].gameObject.SetActive(true);
+            enemySpawnManager._siniflarSpritesFourthEnemy[sinifRandom].gameObject.SetActive(true);
+        }
+        UpdateUISpriteWeapon(this.gameObject, _currentEnemeyIndex);
     }
+    private void UpdateUISpriteWeapon(GameObject _enemy,int i)
+    {
+        switch (_enemy.GetComponent<EnemyManager>().silahName)
+        {
+            case "Bow-Arrow":
+                EnemySpawnManager.Instance._enemyItems[i].GetComponent<Image>().sprite = EnemySpawnManager.Instance._enemyWeapons[0];
+                EnemySpawnManager.Instance._enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().uzak_etki.ToString();
+                break;
+            case "Sword":
+                EnemySpawnManager.Instance._enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().yakin_etki.ToString();
+                EnemySpawnManager.Instance._enemyItems[i].GetComponent<Image>().sprite = EnemySpawnManager.Instance._enemyWeapons[1];
+                break;
+            case "Shield":
+                EnemySpawnManager.Instance._enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().yakin_etki.ToString();
+                EnemySpawnManager.Instance._enemyItems[i].GetComponent<Image>().sprite = EnemySpawnManager.Instance._enemyWeapons[2];
+                break;
+        }
+    }
+
     public void Attack()
     {
         // yakın saldırı mı uzak saldırımı belirle

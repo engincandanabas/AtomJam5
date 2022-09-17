@@ -876,8 +876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.50014114, y: 0.50006104}
-  m_SizeDelta: {x: 0.9997148, y: 1.0001214}
+  m_AnchoredPosition: {x: 49.982, y: 50.522}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5889990929098477440
 Canvas:
@@ -2056,7 +2056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5889990930473888746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.491, z: 0}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2125,8 +2125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.03, y: -1.179}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5889990930502522036
 MonoBehaviour:
@@ -2196,9 +2196,12 @@ MonoBehaviour:
   - {fileID: 5889990929741490118}
   - {fileID: 5889990930536467856}
   floatingPoint: {fileID: 1626989694447086156, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
+  silahName: 
   _target: {fileID: 0}
   damageRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
   missRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
+  _yesilColor: {r: 0, g: 1, b: 0.33720446, a: 1}
+  hasPotion: 1
 --- !u!114 &5889990930502522037
 MonoBehaviour:
   m_ObjectHideFlags: 0

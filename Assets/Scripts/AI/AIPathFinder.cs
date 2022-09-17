@@ -22,7 +22,7 @@ public class AIPathFinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target!=null)
+        if(target!=null && GameManager.instance.gameState==GameManager.GameState.game)
         {
             Vector2 dir = target.position - transform.position;
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);

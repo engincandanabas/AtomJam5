@@ -9,6 +9,9 @@ public class EnemySpawnManager : MonoBehaviour
 {
     public static EnemySpawnManager Instance;
 
+    [Header("Enemy List")]
+    public List<EnemyManager> _enemyList = new List<EnemyManager>();
+
     [Header("Enemy Prefab")]
     [NaughtyAttributes.HorizontalLine(height: 1, color: EColor.White)]
     [SerializeField] private GameObject _enemyPrefab;
@@ -16,14 +19,14 @@ public class EnemySpawnManager : MonoBehaviour
     [Header("UI Attributes")]
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Indigo)]
     [SerializeField] private GameObject[] _enemySprites;
-    [SerializeField] private Slider[] _enemyHealthSlider;
-    [SerializeField] private GameObject[] _enemyItems;
-    [SerializeField] private Sprite[] _enemyWeapons;
+    public Slider[] _enemyHealthSlider;
+    public GameObject[] _enemyItems;
+    public Sprite[] _enemyWeapons;
 
     [Header("Text Attributes")]
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Black)]
     [SerializeField] private TextMeshProUGUI[] _enemyNameTexts;
-    [SerializeField] private TextMeshProUGUI[] _enemyAttackTexts;
+    public TextMeshProUGUI[] _enemyAttackTexts;
     [SerializeField] private TextMeshProUGUI[] _enemyDefenseTexts;
     [SerializeField] private TextMeshProUGUI[] _enemyChanceTexts;
 
@@ -31,8 +34,45 @@ public class EnemySpawnManager : MonoBehaviour
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Green)]
     [SerializeField] GameObject _enemySpawnPoint;
 
-    [Header("Enemy List")]
-    [SerializeField] private List<EnemyManager> _enemyList=new List<EnemyManager>();
+    [Header("First Enemy Classes")]
+    [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Blue)]
+    public Image[] _cuceSpritesFirstEnemy;
+    public Image[] _hobbitSpritesFirstEnemy;
+    public Image[] _elfSpritesFirstEnemy;
+    public Image[] _insanSpritesFirstEnemy;
+    public Image[] _siniflarSpritesFirstEnemy;
+    public Image[] _silahlarSpritesFirstEnemy;
+
+    [Header("Second Enemy Classes")]
+    [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Blue)]
+    public Image[] _cuceSpritesSecondEnemy;
+    public Image[] _hobbitSpritesSecondEnemy;
+    public Image[] _elfSpritesSecondEnemy;
+    public Image[] _insanSpritesSecondEnemy;
+    public Image[] _siniflarSpritesSecondEnemy;
+    public Image[] _silahlarSpritesSecondEnemy;
+
+    [Header("Third Enemy Classes")]
+    [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Blue)]
+    public Image[] _cuceSpritesThirdEnemy;
+    public Image[] _hobbitSpritesThirdEnemy;
+    public Image[] _elfSpritesThirdEnemy;
+    public Image[] _insanSpritesThirdEnemy;
+    public Image[] _siniflarSpritesThirdEnemy;
+    public Image[] _silahlarSpritesThirdEnemy;
+
+    
+
+    [Header("Fourth Enemy Classes")]
+    [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Blue)]
+    public Image[] _cuceSpritesFourthEnemy;
+    public Image[] _hobbitSpritesFourthEnemy;
+    public Image[] _elfSpritesFourthEnemy;
+    public Image[] _insanSpritesFourthEnemy;
+    public Image[] _siniflarSpritesFourthEnemy;
+    public Image[] _silahlarSpritesFourthEnemy;
+
+   
     private void Awake()
     {
         Instance = this;
@@ -43,26 +83,11 @@ public class EnemySpawnManager : MonoBehaviour
         for(int i=0;i<4;i++)
         {
             GameObject _enemy=Instantiate(_enemyPrefab,_enemySpawnPoint.transform.position,Quaternion.identity);
-            //_enemySprites[i].GetComponent<Image>().sprite=
-            switch(_enemy.GetComponent<EnemyManager>().silahName)
-            {
-                case "Bow-Arrow":
-                    _enemyItems[i].GetComponent<Image>().sprite = _enemyWeapons[0];
-                    _enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().uzak_etki.ToString();
-                    break;
-                case "Sword":
-                    _enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().yakin_etki.ToString();
-                    _enemyItems[i].GetComponent<Image>().sprite = _enemyWeapons[1];
-                    break;
-                case "Shield":
-                    _enemyAttackTexts[i].text = _enemy.GetComponent<EnemyManager>().yakin_etki.ToString();
-                    _enemyItems[i].GetComponent<Image>().sprite = _enemyWeapons[2];
-                    break;
-            }
             _enemyDefenseTexts[i].text= _enemy.GetComponent<EnemyManager>().defans.ToString();
             _enemyChanceTexts[i].text = _enemy.GetComponent<EnemyManager>().kacinma.ToString();
 
             _enemyList.Add(_enemy.GetComponent<EnemyManager>());
+            _enemyHealthSlider[i].value = 100;
             yield return new WaitForSeconds(0.05f);
         }
 
