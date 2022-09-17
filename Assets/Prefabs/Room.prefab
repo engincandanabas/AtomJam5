@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0.05
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -193,9 +193,10 @@ MonoBehaviour:
   _currentCapacity: 0
   _heroLayoutGroup: {fileID: 7933110524080956466}
   _enemyLayoutGroup: {fileID: 4385953206250251190}
-  _currnetPassCount: 0
+  _currentPassCount: 0
   heroManagers: []
   enemyManagers: []
+  _enemyTurn: 0
 --- !u!1 &7933110524080956464
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0.05
+  m_Spacing: 0.01
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
