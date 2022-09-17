@@ -9,10 +9,13 @@ public class AIPathFinder : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float radius;
 
+
     private Transform target;
+    int _roomIndex=0;
     void Start()
     {
         rooms = PathManager.instance._rooms;
+        _roomIndex = rooms.Count-1;
         SetTarget();
     }
 
@@ -31,7 +34,7 @@ public class AIPathFinder : MonoBehaviour
         }
     }
     
-    void SetTarget()
+    public void SetTarget()
     {
         var _target = target;
         target = null;
@@ -43,20 +46,20 @@ public class AIPathFinder : MonoBehaviour
                 this.transform.parent = _target.transform.parent.GetComponent<Room>()._enemyLayoutGroup.transform;
                 //saldiri baslayacak
                 Debug.Log("Bu odada savas baslayacak");
+                _target.transform.parent.GetComponent<Room>().enemyManagers.Add(this.transform.GetComponent<EnemyManager>());
             }
             else
             {
                 // dusman yok yeni odaya git
-                // first target
-                target = rooms[rooms.Count - 1]._enemyLayoutGroup.transform;
-                rooms.Remove(rooms[rooms.Count - 1]);
+                target = rooms[_roomIndex]._enemyLayoutGroup.transform;
+                _roomIndex--;
             }
         }
         else
         {
             // first target
-            target=rooms[rooms.Count-1]._enemyLayoutGroup.transform;
-            rooms.Remove(rooms[rooms.Count-1]);
+            target=rooms[_roomIndex]._enemyLayoutGroup.transform;
+            _roomIndex--;
         }
     }
     Room GetRoom(Vector2 center, float radius)

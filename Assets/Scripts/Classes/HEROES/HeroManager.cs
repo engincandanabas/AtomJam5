@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HeroManager : MonoBehaviour
 {
-    public enum HeroTYpe { mouse,dog,goblin,ogre,ork,gnoll}
+    public enum HeroTYpe { mouse, dog, goblin, ogre, ork, gnoll }
     public HeroTYpe type;
 
     public GameObject floatingPoint;
@@ -19,10 +19,31 @@ public class HeroManager : MonoBehaviour
     public int kacinma;
     public int can;
 
-    private int mevcutCan;
+
 
     // target bulundugu odadan random cekilcek
-    [SerializeField] private EnemyManager _target;
+    public EnemyManager _target;
+
+    public int Can
+    {
+        get { return this.can; }
+        set
+        {
+            if (this.can < value)
+            {
+                // iyilesme
+                this.can = value;
+            }
+            else
+            {
+                // damage yedi
+                this.can = value;
+                // pop up cikacak
+                setPopup();
+            }
+        }
+    }
+
     public void Awake()
     {
         InitializeVariables();
@@ -50,7 +71,9 @@ public class HeroManager : MonoBehaviour
         defans = _heroScriptable.defans;
         can = _heroScriptable.can;
     }
-    public IEnumerator Attack()
+
+
+    public void Attack()
     {
         Debug.Log(_heroScriptable.name);
 
@@ -58,13 +81,16 @@ public class HeroManager : MonoBehaviour
         {
             if (Random.Range(0, yakin_etki) > _target.kacinma) // ýska mý deðil mi 
             {     // target a hasar ver 
-                Setup(yakin_etki,"a");
-                _target.can -= (yakin_etki - _target.defans);
-                
-                
-                Debug.Log(_target.name + " caný " + _target.can.ToString());
-                if (_target.can <= 0)
+                Setup(yakin_etki, "a");
+                _target.Can -= (yakin_etki - _target.defans);
+
+
+                Debug.Log(_target.name + " caný " + _target.Can.ToString());
+                if (_target.Can <= 0)
+                {
+                    _target.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(_target);
                     Destroy(_target.gameObject);
+                }
             }
             else
             {
@@ -79,17 +105,22 @@ public class HeroManager : MonoBehaviour
             if (Random.Range(0, 10) == 5)   // Rastgele bir sayý
             {
                 // target a hasar ver
-                Setup(yakin_etki,"a");
-                _target.can -= (yakin_etki - _target.defans);
-                Debug.Log(_target.name + " caný " + _target.can.ToString());
-                if (_target.can <= 0)
+                Setup(yakin_etki, "a");
+                _target.Can -= (yakin_etki - _target.defans);
+                Debug.Log(_target.name + " caný " + _target.Can.ToString());
+                if (_target.Can <= 0)
+                {
+                    _target.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(_target);
                     Destroy(_target.gameObject);
+                }
             }
         }
-
-        // atak bitti 
-        yield return new WaitForSeconds(1);
-        StartCoroutine(_target.Attack());
-
     }
+
+    private void setPopup()
+    {
+        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+        Destroy(popup, 4f);
+    }
+
 }

@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  floatingPoint: {fileID: 1626989694447086156, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
   _heroScriptable: {fileID: 11400000, guid: cdea85ee35ce7b34abf88e811d04ead1, type: 2}
   yakin_etki: 0
   uzak_etki: 0
