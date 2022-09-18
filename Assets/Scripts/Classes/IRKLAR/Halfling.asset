@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Halfling
   yakin_etki: 2
-  uzak_etki: 1
-  iyilestirme: 0
-  ganimet: 4
+  uzak_etki: 3
+  iyilestirme: 4
+  ganimet: 5
   defans: 0
-  kacinma: 3
-  can: 90
+  kacinma: 0
+  can: 0

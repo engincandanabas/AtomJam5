@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Woman
   m_EditorClassIdentifier: 
   name: Woman
-  yakin_etki: 1
-  uzak_etki: 3
-  iyilestirme: 3
-  ganimet: 0
-  defans: 1
-  kacinma: 2
+  yakin_etki: 2
+  uzak_etki: 1
+  iyilestirme: 2
+  ganimet: 1
+  defans: 0
+  kacinma: 0
   can: 20

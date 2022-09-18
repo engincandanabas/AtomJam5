@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Thief
   yakin_etki: 2
-  uzak_etki: 0
-  iyilestirme: 0
-  ganimet: 7
+  uzak_etki: 1
+  iyilestirme: 1
+  ganimet: 3
   defans: 0
-  kacinma: 1
+  kacinma: 0
   can: 10

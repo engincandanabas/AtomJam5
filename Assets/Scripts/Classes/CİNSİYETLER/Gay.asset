@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gay
   yakin_etki: 1
-  uzak_etki: 1
-  iyilestirme: 1
-  ganimet: 3
+  uzak_etki: 2
+  iyilestirme: 2
+  ganimet: 2
   defans: 0
-  kacinma: 4
-  can: 40
+  kacinma: 0
+  can: 25

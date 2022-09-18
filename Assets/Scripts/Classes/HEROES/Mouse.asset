@@ -17,6 +17,6 @@ MonoBehaviour:
   uzak_etki: 0
   iyilestirme: 0
   ganimet: 0
-  defans: 0
-  kacinma: 2
+  defans: 2
+  kacinma: 4
   can: 20

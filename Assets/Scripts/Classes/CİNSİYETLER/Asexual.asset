@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Asexual
   m_EditorClassIdentifier: 
   name: Asexual
-  yakin_etki: 0
-  uzak_etki: 3
-  iyilestirme: 0
-  ganimet: 1
-  defans: 4
-  kacinma: 2
-  can: 50
+  yakin_etki: 1
+  uzak_etki: 1
+  iyilestirme: 1
+  ganimet: 2
+  defans: 0
+  kacinma: 0
+  can: 35

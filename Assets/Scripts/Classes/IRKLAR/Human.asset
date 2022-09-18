@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Human
   m_EditorClassIdentifier: 
   name: Human
-  yakin_etki: 2
-  uzak_etki: 2
-  iyilestirme: 1
-  ganimet: 2
-  defans: 1
-  kacinma: 2
-  can: 100
+  yakin_etki: 6
+  uzak_etki: 4
+  iyilestirme: 2
+  ganimet: 1
+  defans: 0
+  kacinma: 0
+  can: 0

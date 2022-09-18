@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Bow-Arrow
   m_EditorClassIdentifier: 
   name: Bow-Arrow
-  yakin_etki: 0
-  uzak_etki: 7
-  iyilestirme: 0
-  ganimet: 0
-  defans: 0
+  yakin_etki: 2
+  uzak_etki: 5
+  iyilestirme: 1
+  ganimet: 1
+  defans: 2
   kacinma: 3
   can: 0

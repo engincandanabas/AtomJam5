@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Elf
   m_EditorClassIdentifier: 
   name: Elf
-  yakin_etki: 1
-  uzak_etki: 3
-  iyilestirme: 3
-  ganimet: 0
-  defans: 1
-  kacinma: 2
-  can: 120
+  yakin_etki: 3
+  uzak_etki: 5
+  iyilestirme: 6
+  ganimet: 1
+  defans: 0
+  kacinma: 0
+  can: 0

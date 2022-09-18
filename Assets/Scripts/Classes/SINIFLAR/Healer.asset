@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Healer
   m_EditorClassIdentifier: 
   name: Healer
-  yakin_etki: 2
-  uzak_etki: 2
-  iyilestirme: 5
-  ganimet: 0
+  yakin_etki: 1
+  uzak_etki: 1
+  iyilestirme: 3
+  ganimet: 2
   defans: 0
-  kacinma: 1
+  kacinma: 0
   can: 20

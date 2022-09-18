@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dwarf
   m_EditorClassIdentifier: 
   name: Dwarf
-  yakin_etki: 3
-  uzak_etki: 0
-  iyilestirme: 0
-  ganimet: 2
-  defans: 4
-  kacinma: 1
-  can: 130
+  yakin_etki: 5
+  uzak_etki: 3
+  iyilestirme: 2
+  ganimet: 4
+  defans: 0
+  kacinma: 0
+  can: 0
