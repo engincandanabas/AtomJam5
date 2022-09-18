@@ -51,6 +51,7 @@ public class EnemyManager : Enemy
                 Setup(-2, "Heal");
                 GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
                 healPopup.GetComponent<TextMeshPro>().color = healColor;
+                PopupManager.instance.popupList.Add(healPopup);
                 this.can = value;
             }
             else
@@ -174,6 +175,7 @@ public class EnemyManager : Enemy
                 Setup(-1, "Miss");
                 GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
                 healPopup.GetComponent<TextMeshPro>().color = missColor;
+                PopupManager.instance.popupList.Add(healPopup);
                 Debug.Log(_target.name + " kaçındı");
             }
 
@@ -199,6 +201,7 @@ public class EnemyManager : Enemy
     {
         GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
         healPopup.GetComponent<TextMeshPro>().color = attackColor;
+        PopupManager.instance.popupList.Add(healPopup);
     }
     private void DisableSprite(SpriteRenderer[] _array,int _index)
     {
