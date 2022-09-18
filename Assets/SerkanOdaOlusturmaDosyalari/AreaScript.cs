@@ -60,14 +60,14 @@ public class AreaScript : MonoBehaviour
         if (!onBlock)
         {
             soundIndex = Random.Range(0, 3);
-            SceneManager.Instance.sources[soundIndex].Play();
+            SceneManager_.Instance.sources[soundIndex].Play();
 
             createdArea = Instantiate(IntantaneArea);
 
             createdArea.transform.parent = transform;
             createdArea.transform.localPosition = new Vector3(0, 0, 0);
-            SceneManager.Instance.particle.transform.position = createdArea.transform.position;
-            SceneManager.Instance.particle.Play();
+            SceneManager_.Instance.particle.transform.position = createdArea.transform.position;
+            SceneManager_.Instance.particle.Play();
             // createdArea.GetComponent<SpriteRenderer>().sprite = sprites[AreaIndex];
             Image[] img = createdArea.transform.GetChild(0).GetComponentsInChildren<Image>();
             foreach (Image item in img)
@@ -88,8 +88,8 @@ public class AreaScript : MonoBehaviour
                 //Hedef Odaya Ulaþýldý ve Oda Yaratýldý
                 Debug.Log("Karakterleri Yerleþtir");
                 createdArea.transform.GetChild(0).gameObject.SetActive(false);
-                SceneManager.Instance.particle.transform.position = createdArea.transform.position;
-                SceneManager.Instance.particle.Play();
+                SceneManager_.Instance.particle.transform.position = createdArea.transform.position;
+                SceneManager_.Instance.particle.Play();
                 targetRoom = false;
             }
 
@@ -109,6 +109,8 @@ public class AreaScript : MonoBehaviour
             {
                 DoorList[3].gameObject.transform.DOScale(new Vector2(.3f, .3f), .3f);
             }
+
+            PathManager.instance._rooms.Add(createdArea.GetComponent<Room>());
         }
     }
     public void OpenArrow()

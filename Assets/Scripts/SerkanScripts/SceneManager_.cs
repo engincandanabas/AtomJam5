@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class SceneManager_ : MonoBehaviour
 {
-    public static SceneManager Instance { get => instance; set => instance = value; }
-    private static SceneManager instance;
+    public static SceneManager_ Instance { get => instance; set => instance = value; }
+    private static SceneManager_ instance;
 
     public AudioSource[] sources;
     public ParticleSystem particle;

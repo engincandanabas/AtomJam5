@@ -12,10 +12,10 @@ public class AIPathFinder : MonoBehaviour
 
     private Transform target;
     int _roomIndex=0;
-    void Start()
+    public void SetEnemyTargetFirstSetup()
     {
         rooms = PathManager.instance._rooms;
-        _roomIndex = rooms.Count-1;
+        _roomIndex = rooms.Count - 1;
         SetTarget();
     }
 
