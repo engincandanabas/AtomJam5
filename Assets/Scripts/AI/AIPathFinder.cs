@@ -44,6 +44,8 @@ public class AIPathFinder : MonoBehaviour
             if (_roomIndex == -1)
             { 
                 Debug.LogWarning("SAVAS BÝTTÝ");
+                GameManager.instance.gameState = GameManager.GameState.finish;
+                GameManager.instance.levelFailedUI.SetActive(true);
                 return;
 
             }

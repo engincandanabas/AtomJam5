@@ -532,7 +532,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 11400000, guid: 1c2e20205852eb94ebf2bdb173332659, type: 2}
+  m_CustomBlends: {fileID: 11400000, guid: df55d6e6dcb809148bd14a7a9b6ea3f3, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1341,7 +1341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882770036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.7, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1375,7 +1375,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 11400000, guid: 0dfbab37813ba5e43b9e92b10b1c4d3c, type: 2}
+  m_CustomBlends: {fileID: 11400000, guid: 17083091c73e209489de77a98ada8e9f, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []

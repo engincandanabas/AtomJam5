@@ -108,6 +108,7 @@ public class Room : MonoBehaviour
         if(heroManagers.Count!=0)
         {
             // savas bitti hero kazandi
+
         }
         if(enemyManagers.Count!=0)
         {

@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Vector3 _enabledBottomHeroPos,_disabledBottomHeroPos;
     public bool _firstRoomTriggered=false;
 
+    public GameObject levelPassUI;
+    public GameObject levelFailedUI;
+
     public GameObject _followTarget;
     public bool _isTargetSelected = false;
 
@@ -57,5 +60,12 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.DOMove(PathManager.instance._rooms[PathManager.instance._rooms.Count-1].transform.position+new Vector3(0,0,-10f),1f);
     }
 
-
+    public void RestartLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+    public void MainMenuLoad()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
 }
