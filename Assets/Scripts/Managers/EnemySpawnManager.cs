@@ -88,6 +88,7 @@ public class EnemySpawnManager : MonoBehaviour
 
             _enemyList.Add(_enemy.GetComponent<EnemyManager>());
             _enemyHealthSlider[i].value = 100;
+            _enemy.transform.position += new Vector3(i * 0.45f, 0, 0);
             yield return new WaitForSeconds(0.05f);
         }
 

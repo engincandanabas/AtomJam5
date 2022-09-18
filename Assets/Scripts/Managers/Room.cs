@@ -104,7 +104,7 @@ public class Room : MonoBehaviour
                 // layouttan cikar
                 enemyManagers[i].transform.parent = null;
                 // listeden cikar
-                enemyManagers[i].transform.position = _enemyLayoutGroup.transform.position+new Vector3(Random.Range(0f,1f),0,0);
+                enemyManagers[i].transform.position = _enemyLayoutGroup.transform.position+new Vector3(i*0.45f,0,0);
                 enemyManagers[i].GetComponent<AIPathFinder>().SetTarget();
             }
             heroManagers.Clear();

@@ -61,7 +61,7 @@ public class HeroesPlaceManager : MonoBehaviour
                                     // yerlestirme yapilabilir
 
                                     // parent objenin cocugu olarak ata
-                                    _preview.transform.parent = hit.transform.GetChild(0);
+                                    _preview.transform.parent = hit.transform.GetChild(1);
                                     // parent objenin listesine heroyu ata
                                     _room.heroManagers.Add(_preview.GetComponent<HeroManager>());
                                     // current kapasitiyi artýr
@@ -141,7 +141,7 @@ public class HeroesPlaceManager : MonoBehaviour
     }
     public void SpawnHero(GameObject heroPrefab)
     {
-        if(_preview==null)
+        if(_preview==null && GameManager.instance.gameState==GameManager.GameState.menu)
         {
             _preview = Instantiate(heroPrefab);
             SpawnObjectType(_preview);

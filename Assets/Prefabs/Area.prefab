@@ -30,7 +30,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4450855629655478445}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -95,10 +95,10 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4450855631162342945}
-  - {fileID: 4450855629717103552}
-  - {fileID: 7101353190145961834}
   - {fileID: 7702774387723233330}
   - {fileID: 5699766254369121938}
+  - {fileID: 4450855629717103552}
+  - {fileID: 7101353190145961834}
   - {fileID: 7101353190136468678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 9e5c5ff87e8ea924c8a001ace3e3caab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -310,7 +310,7 @@ Transform:
   - {fileID: 4450855631202373252}
   - {fileID: 4450855629799158033}
   m_Father: {fileID: 4450855629655478445}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4450855629799158031
 GameObject:
@@ -470,7 +470,6 @@ MonoBehaviour:
   - {fileID: 4450855630831024154}
   - {fileID: 4450855631202373250}
   - {fileID: 4450855629799158031}
-  particle: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!114 &4450855630079479590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +719,6 @@ MonoBehaviour:
   - {fileID: 4450855630831024154}
   - {fileID: 4450855631202373250}
   - {fileID: 4450855629799158031}
-  particle: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!114 &4450855630347859893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +945,6 @@ MonoBehaviour:
   - {fileID: 4450855630831024154}
   - {fileID: 4450855631202373250}
   - {fileID: 4450855629799158031}
-  particle: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!114 &4450855630664755367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1610,6 @@ MonoBehaviour:
   - {fileID: 4450855630831024154}
   - {fileID: 4450855631202373250}
   - {fileID: 4450855629799158031}
-  particle: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
 --- !u!114 &4450855631497547667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,7 +1907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4450855629655478445}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7101353190145961837
 MonoBehaviour:
@@ -1978,7 +1974,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4450855629655478445}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

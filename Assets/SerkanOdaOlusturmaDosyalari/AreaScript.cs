@@ -50,6 +50,7 @@ public class AreaScript : MonoBehaviour
             if (hit.collider.CompareTag("TargetRoom"))
             {
                 targetRoom = true;
+                
             }
         }
     }
@@ -91,6 +92,9 @@ public class AreaScript : MonoBehaviour
                 SceneManager_.Instance.particle.transform.position = createdArea.transform.position;
                 SceneManager_.Instance.particle.Play();
                 targetRoom = false;
+                //
+                GameManager.instance._bottomHeroPanel.transform.DOLocalMove(GameManager.instance._enabledBottomHeroPos, 1f);
+                
             }
 
             if (this.CompareTag("Up"))
