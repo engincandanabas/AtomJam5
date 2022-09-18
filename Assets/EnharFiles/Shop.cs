@@ -13,11 +13,6 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         priceText.text = item._price.ToString();
-        if(!PlayerPrefs.HasKey("Mouse"))
-        {
-            // oyuncu oyuna ilk defa girdi
-            PlayerPrefs.SetInt("Mouse", 3);
-        }
     }
     public void Buy()
     {

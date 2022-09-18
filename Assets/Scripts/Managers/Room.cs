@@ -108,7 +108,8 @@ public class Room : MonoBehaviour
         if(heroManagers.Count!=0)
         {
             // savas bitti hero kazandi
-
+            GameManager.instance.gameState = GameManager.GameState.finish;
+            GameManager.instance.levelPassUI.SetActive(true);
         }
         if(enemyManagers.Count!=0)
         {

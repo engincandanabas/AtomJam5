@@ -92,7 +92,7 @@ public class HeroesPlaceManager : MonoBehaviour
     {
         // test assaign 
         // 0-mouse 1-dog 2-goblin 3-ogre 4-ork 5-gnoll 
-        _heroesCounts[0] = PlayerPrefs.GetInt("Mouse",0);
+        _heroesCounts[0] = PlayerPrefs.GetInt("Mouse",3);
         _heroesCounts[1] = PlayerPrefs.GetInt("Dog",0);
         _heroesCounts[2] = PlayerPrefs.GetInt("Goblin",0);
         _heroesCounts[3] = PlayerPrefs.GetInt("Ogre",0);
