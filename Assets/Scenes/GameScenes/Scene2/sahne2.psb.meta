@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 3e34383a43b8d2940ae01957c36f8376
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: GOBLIN2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3290
+      width: 510
+      height: 472
+    spriteID: 9f632be20a185b24f92d669e1ce844e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1397, y: 3174}
+  - name: GOBLIN1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1183
+      y: 2202
+      width: 717
+      height: 487
+    spriteID: f2eb393b3755e3f47b3867a43ed5a951
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -34, y: 2101}
+  - name: INSAN
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 666
+      y: 3604
+      width: 262
+      height: 369
+    spriteID: 63f689362c7c9f84cac060fe12e90dec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -215, y: 3200}
+  - name: ELF
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 936
+      y: 3604
+      width: 161
+      height: 388
+    spriteID: a4aa21ea8522d3d44adbf171e9e04185
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 297, y: 3163}
+  - name: HOBIT
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1183
+      y: 3101
+      width: 148
+      height: 384
+    spriteID: 793855a7468170e4e8788dc996b113e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 311, y: 2675}
+  - name: CUCE
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 666
+      y: 3290
+      width: 389
+      height: 306
+    spriteID: fb7b39fcad2c00f49bf71aa4c2806220
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 135, y: 2855}
+  - name: CALI
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1183
+      y: 2697
+      width: 854
+      height: 396
+    spriteID: a9317ed3d7d2c774b887b41f9464923c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 19, y: 2566}
+  - name: OTLAR
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3770
+      width: 503
+      height: 255
+    spriteID: 0388ee7820db72040a181e6e50c73286
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -108, y: 3639}
+  - name: AGAC_SAG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 666
+      y: 2202
+      width: 509
+      height: 1080
+    spriteID: 9ed9969a207396a429925341f8e7aa25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -843, y: 2071}
+  - name: AGAC_SOL
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2202
+      width: 654
+      height: 1080
+    spriteID: 0859fde6058dfc14ca75508854d3b563
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -94, y: 2071}
+  - name: TOPRAK
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 2050
+      height: 1102
+    spriteID: a3a2a2adb73bbd74fb876de2c2428590
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: BG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1114
+      width: 1920
+      height: 1080
+    spriteID: 72b5c91d4e5b35641aa71bada26d610b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -94, y: 983}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: GOBLIN2
+    spriteName: GOBLIN2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f632be20a185b24f92d669e1ce844e0
+    layerID: 99
+    mosaicPosition: {x: 4, y: 3290}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: GOBLIN1
+    spriteName: GOBLIN1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f2eb393b3755e3f47b3867a43ed5a951
+    layerID: 89
+    mosaicPosition: {x: 1183, y: 2202}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: INSAN
+    spriteName: INSAN
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 63f689362c7c9f84cac060fe12e90dec
+    layerID: 101
+    mosaicPosition: {x: 666, y: 3604}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ELF
+    spriteName: ELF
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a4aa21ea8522d3d44adbf171e9e04185
+    layerID: 103
+    mosaicPosition: {x: 936, y: 3604}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: HOBIT
+    spriteName: HOBIT
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 793855a7468170e4e8788dc996b113e8
+    layerID: 102
+    mosaicPosition: {x: 1183, y: 3101}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: CUCE
+    spriteName: CUCE
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fb7b39fcad2c00f49bf71aa4c2806220
+    layerID: 104
+    mosaicPosition: {x: 666, y: 3290}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: CALI
+    spriteName: CALI
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a9317ed3d7d2c774b887b41f9464923c
+    layerID: 59
+    mosaicPosition: {x: 1183, y: 2697}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: OTLAR
+    spriteName: OTLAR
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0388ee7820db72040a181e6e50c73286
+    layerID: 47
+    mosaicPosition: {x: 4, y: 3770}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: AGAC_SAG
+    spriteName: AGAC_SAG
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ed9969a207396a429925341f8e7aa25
+    layerID: 56
+    mosaicPosition: {x: 666, y: 2202}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: AGAC_SOL
+    spriteName: AGAC_SOL
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0859fde6058dfc14ca75508854d3b563
+    layerID: 48
+    mosaicPosition: {x: 4, y: 2202}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: TOPRAK
+    spriteName: TOPRAK
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a3a2a2adb73bbd74fb876de2c2428590
+    layerID: 39
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG
+    spriteName: BG
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 72b5c91d4e5b35641aa71bada26d610b
+    layerID: 29
+    mosaicPosition: {x: 4, y: 1114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

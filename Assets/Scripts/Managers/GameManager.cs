@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        /*if(Input.GetMouseButtonDown(0))
+        {
+            CoinsManager.instance.AddCoins(Camera.main.ScreenToWorldPoint(Input.mousePosition), Random.Range(1, 7));
+        }*/
     }
     public void StartGame()
     {

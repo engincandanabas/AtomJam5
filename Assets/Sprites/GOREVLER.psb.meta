@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: 980c9670a5b686e4e8b83bd52a73b75e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Katman 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 507
+      y: 915
+      width: 0
+      height: 0
+    spriteID: 7a09b21751ad05c4f8ab9544d408f3fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -40, y: 80}
+  - name: COMING SOON
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 559
+      y: 4
+      width: 446
+      height: 682
+    spriteID: cc35f5918826f5b479652b6b1d8b43de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 505, y: -71}
+  - name: 250 Gold
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 915
+      width: 162
+      height: 30
+    spriteID: e7a09a3f23e26b24180122a5871310de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -270, y: 699}
+  - name: MEDIUM
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 344
+      y: 915
+      width: 155
+      height: 30
+    spriteID: 2368c25b5dbbd1c49874c0be5f1a36d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 68, y: 657}
+  - name: 1 Day
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 261
+      y: 953
+      width: 97
+      height: 30
+    spriteID: 113e2cae98ddf1a44a75bbfb74768f21
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -12, y: 653}
+  - name: 'Holy Bowl '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 303
+      y: 847
+      width: 188
+      height: 30
+    spriteID: f5eedc94b932ca24aa1f3c71e084a763
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 174, y: 508}
+  - name: 500 Gold
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 174
+      y: 915
+      width: 162
+      height: 30
+    spriteID: 2903261f386ba6349b0747d08bb1a74e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -100, y: 483}
+  - name: Hard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 366
+      y: 953
+      width: 89
+      height: 30
+    spriteID: 2a4162bcd21e5004d99fd4af86783306
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 90, y: 479}
+  - name: 3 Day
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 953
+      width: 104
+      height: 30
+    spriteID: 7531ae8dce9dec2498ea421baf5a4d62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -125, y: 437}
+  - name: "Pr\u0131ncess"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 953
+      width: 137
+      height: 30
+    spriteID: 966b706b4fdb161448395b7b269e9bd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -125, y: 398}
+  - name: QUESTS
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 847
+      width: 291
+      height: 60
+    spriteID: 25dfdda6434204f4d9a5784a8153003f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -122, y: 199}
+  - name: KAGIT
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 547
+      height: 835
+    spriteID: 9c54bc3cb8d951b44b0eb1a0777a8c91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Katman 1
+    spriteName: Katman 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7a09b21751ad05c4f8ab9544d408f3fb
+    layerID: 14
+    mosaicPosition: {x: 507, y: 915}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: COMING SOON
+    spriteName: COMING SOON
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cc35f5918826f5b479652b6b1d8b43de
+    layerID: 13
+    mosaicPosition: {x: 559, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 250 Gold
+    spriteName: 250 Gold
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7a09a3f23e26b24180122a5871310de
+    layerID: 12
+    mosaicPosition: {x: 4, y: 915}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: MEDIUM
+    spriteName: MEDIUM
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2368c25b5dbbd1c49874c0be5f1a36d9
+    layerID: 11
+    mosaicPosition: {x: 344, y: 915}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 1 Day
+    spriteName: 1 Day
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 113e2cae98ddf1a44a75bbfb74768f21
+    layerID: 10
+    mosaicPosition: {x: 261, y: 953}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'Holy Bowl '
+    spriteName: 'Holy Bowl '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f5eedc94b932ca24aa1f3c71e084a763
+    layerID: 9
+    mosaicPosition: {x: 303, y: 847}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 500 Gold
+    spriteName: 500 Gold
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2903261f386ba6349b0747d08bb1a74e
+    layerID: 8
+    mosaicPosition: {x: 174, y: 915}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hard
+    spriteName: Hard
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2a4162bcd21e5004d99fd4af86783306
+    layerID: 7
+    mosaicPosition: {x: 366, y: 953}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 3 Day
+    spriteName: 3 Day
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7531ae8dce9dec2498ea421baf5a4d62
+    layerID: 6
+    mosaicPosition: {x: 149, y: 953}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "Pr\u0131ncess"
+    spriteName: "Pr\u0131ncess"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 966b706b4fdb161448395b7b269e9bd0
+    layerID: 5
+    mosaicPosition: {x: 4, y: 953}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: QUESTS
+    spriteName: QUESTS
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 25dfdda6434204f4d9a5784a8153003f
+    layerID: 4
+    mosaicPosition: {x: 4, y: 847}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: KAGIT
+    spriteName: KAGIT
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9c54bc3cb8d951b44b0eb1a0777a8c91
+    layerID: 2
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

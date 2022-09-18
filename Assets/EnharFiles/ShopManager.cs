@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
+    public static ShopManager instance;
     public int Money
     {
         get
@@ -15,6 +16,8 @@ public class ShopManager : MonoBehaviour
         set
         {
             PlayerPrefs.SetInt("Money", value);
+            moneyMainMenuText.text=Money.ToString();
+            moneyText.text=Money.ToString();
         }
     }
     public TextMeshProUGUI moneyText;
@@ -24,6 +27,10 @@ public class ShopManager : MonoBehaviour
 
     public GameObject shopPanel;
     public GameObject shopButton;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         Money = Money;

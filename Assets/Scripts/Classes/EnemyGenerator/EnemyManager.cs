@@ -63,6 +63,7 @@ public class EnemyManager : Enemy
             {
                 // damage yedi
                 this.can = value;
+                
                 // slider 
                 // detect who am i
                 EnemySpawnManager enemySpawnManager = EnemySpawnManager.Instance;
@@ -76,6 +77,17 @@ public class EnemyManager : Enemy
                 }
                 // pop up cikacak
                 setPopup();
+                if (this.can <= 0)
+                {
+                    this.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(this);
+                    ShopManager.instance.Money += 100;
+                    var temp = this.transform.position;
+                    this.transform.parent = null;
+                    transform.position = temp;
+                    CoinsManager.instance.AddCoins(this.transform.position, Random.Range(0, 10));
+
+                    Destroy(this.gameObject);
+                }
             }
         }
     }

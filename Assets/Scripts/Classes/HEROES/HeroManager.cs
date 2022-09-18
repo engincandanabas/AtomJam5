@@ -88,11 +88,7 @@ public class HeroManager : MonoBehaviour
 
 
                 Debug.Log(_target.name + " caný " + _target.Can.ToString());
-                if (_target.Can <= 0)
-                {
-                    _target.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(_target);
-                    Destroy(_target.gameObject);
-                }
+                
             }
             else
             {
@@ -112,11 +108,6 @@ public class HeroManager : MonoBehaviour
                 Setup(yakin_etki, "a");
                 _target.Can -= (yakin_etki - _target.defans);
                 Debug.Log(_target.name + " caný " + _target.Can.ToString());
-                if (_target.Can <= 0)
-                {
-                    _target.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(_target);
-                    Destroy(_target.gameObject);
-                }
             }
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 using TMPro;
+using DG.Tweening;
 
 public class EnemySpawnManager : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class EnemySpawnManager : MonoBehaviour
     [Header("Enemy Prefab")]
     [NaughtyAttributes.HorizontalLine(height: 1, color: EColor.White)]
     [SerializeField] private GameObject _enemyPrefab;
-
+    [SerializeField] private GameObject _coinPrefab;
+    public Transform _mainMenuCoinTransform;
+ 
     [Header("UI Attributes")]
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Indigo)]
     [SerializeField] private GameObject[] _enemySprites;
@@ -93,6 +96,5 @@ public class EnemySpawnManager : MonoBehaviour
         }
 
     }
-
-    
+ 
 }
