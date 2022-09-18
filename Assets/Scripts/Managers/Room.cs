@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Room : MonoBehaviour
 {
@@ -51,10 +52,24 @@ public class Room : MonoBehaviour
                     if (currentEnemy != null)
                     {
                         var targetHero = heroManagers[Random.Range(0, heroManagers.Count)];
-                        if (targetHero != null)
+                        currentEnemy._target = targetHero;
+                        if (currentEnemy.Can < currentEnemy._maxEnemyHeatlh / 5 && currentEnemy.hasPotion)
                         {
-                            currentEnemy._target = targetHero;
+                            // iyilesitrme
+
+                            currentEnemy.Can = currentEnemy.Can + 25;
+                            Debug.Log(currentEnemy.name + "iyileþtirme yaptý " + 25);
+                            Debug.Log(currentEnemy.name + "mevcut can " + currentEnemy.Can);
+
+                            currentEnemy.hasPotion = false;
+                            // can+=
+                        }
+                        else
+                        {
+                            Debug.Log("saldýrýya öncesi");
                             currentEnemy.Attack();
+                            Debug.Log("saldýrýya girdi");
+                            // attack
                         }
                     }
                 }
@@ -98,19 +113,28 @@ public class Room : MonoBehaviour
         {
             Debug.Log("Enemy Kazandi.");
             // savas bitti enemy kazandi
-            for(int i=0;i<enemyManagers.Count;i++)
-            {
-                enemyManagers[i]._target = null;
-                // layouttan cikar
-                enemyManagers[i].transform.parent = null;
-                // listeden cikar
-                enemyManagers[i].transform.position = _enemyLayoutGroup.transform.position+new Vector3(i*0.45f,0,0);
-                enemyManagers[i].GetComponent<AIPathFinder>().SetTarget();
-            }
-            heroManagers.Clear();
-            // diger odaya yonel
+            StartCoroutine(AfterEnemyVictory());
 
         }
+    }
+    IEnumerator AfterEnemyVictory()
+    {
+        for (int i = 0; i < enemyManagers.Count; i++)
+        {
+            enemyManagers[i]._target = null;
+            //
+            enemyManagers[i]._tempPos = enemyManagers[i].transform.position;
+            // layouttan cikar
+            enemyManagers[i].transform.parent = null;
+            // listeden cikar
+            enemyManagers[i].transform.position = enemyManagers[i]._tempPos;
+            enemyManagers[i].transform.DOMove(_enemyLayoutGroup.transform.position + new Vector3(i * 0.45f, 0, 0),3f);
+            // set parent
+            enemyManagers[i].GetComponent<AIPathFinder>().SetTarget();
+        }
+        heroManagers.Clear();
+        // diger odaya yonel
+        yield return null;
     }
 
 

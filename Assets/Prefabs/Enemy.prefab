@@ -2099,9 +2099,10 @@ GameObject:
   - component: {fileID: 5889990930502522036}
   - component: {fileID: 5889990930502522037}
   - component: {fileID: 5889990930502522035}
+  - component: {fileID: 1204170983487323406}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2195,12 +2196,15 @@ MonoBehaviour:
   - {fileID: 5889990930520490859}
   - {fileID: 5889990929741490118}
   - {fileID: 5889990930536467856}
-  floatingPoint: {fileID: 1626989694447086156, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
+  floatingPoint: {fileID: 1626989694447086156, guid: 89a0f28cea95e2a49b842eac5a979f0b, type: 3}
   silahName: 
+  healColor: {r: 0.26666665, g: 0.99215686, b: 0.33980733, a: 1}
+  missColor: {r: 0.36320752, g: 0.7626497, b: 1, a: 1}
+  attackColor: {r: 0.9528302, g: 0.25441337, b: 0.19326274, a: 1}
   _target: {fileID: 0}
   damageRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
   missRect: {fileID: 1626989694447086153, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
-  _yesilColor: {r: 0, g: 1, b: 0.33720446, a: 1}
+  _maxEnemyHeatlh: 0
   hasPotion: 1
 --- !u!114 &5889990930502522037
 MonoBehaviour:
@@ -2236,6 +2240,22 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!70 &1204170983487323406
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889990930502522038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &5889990930520490861
 GameObject:
   m_ObjectHideFlags: 0

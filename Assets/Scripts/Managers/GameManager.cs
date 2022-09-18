@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject _bottomHeroPanel;
     public Vector3 _enabledBottomHeroPos,_disabledBottomHeroPos;
-
+    public bool _firstRoomTriggered=false;
     
 
 
@@ -26,6 +26,17 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+    private void Update()
+    {
+        if(_firstRoomTriggered)
+        {
+            if(EnemySpawnManager.Instance._enemyList.Count>0 && EnemySpawnManager.Instance._enemyList[0].transform.parent==null)
+            {
+                Debug.Log("Tetiklendi");
+                Camera.main.transform.position=EnemySpawnManager.Instance._enemyList[0].transform.position+new Vector3(0,0,-10f);
+            }
+        }
+    }
     public void StartGame()
     {
         for(int i=0;i<EnemySpawnManager.Instance._enemyList.Count;i++)
@@ -34,6 +45,8 @@ public class GameManager : MonoBehaviour
         }
         gameState = GameState.game;
         _bottomHeroPanel.transform.DOLocalMove(_disabledBottomHeroPos, .5f);
+        Camera.main.DOOrthoSize(2,1f);
+        Camera.main.transform.DOMove(PathManager.instance._rooms[PathManager.instance._rooms.Count-1].transform.position+new Vector3(0,0,-10f),1f);
     }
 
 

@@ -23,6 +23,7 @@ public class EnemyManager : Enemy
     public SpriteRenderer[] _siniflarSprites;
     public SpriteRenderer[] _silahlarSprites;
 
+    public Vector3 _tempPos;
 
     [Header("Attributes")]
     [NaughtyAttributes.HorizontalLine(height: 2, color: EColor.Red)]
@@ -30,11 +31,17 @@ public class EnemyManager : Enemy
     public GameObject floatingPoint;
     public string silahName;
 
+    [Header("Colors")]
+    [NaughtyAttributes.HorizontalLine(height:2,color:EColor.Black)]
+    public Color healColor;
+    public Color missColor;
+    public Color attackColor;
+
     public HeroManager _target;
 
     public RectTransform damageRect, missRect;
 
-    private int _maxEnemyHeatlh;
+    public int _maxEnemyHeatlh;
     // baslangicta iksiri var
     public bool hasPotion = true;
     //can degisdiğinde yapilacak diğer islemlerinde yapildigi property
@@ -46,6 +53,10 @@ public class EnemyManager : Enemy
             if (this.can < value)
             {
                 // iyilesme
+                Setup(-2, "Heal");
+                GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+                healPopup.GetComponent<TextMeshPro>().color = healColor;
+                PopupManager.instance.popupList.Add(healPopup);
                 this.can = value;
             }
             else
@@ -73,12 +84,17 @@ public class EnemyManager : Enemy
     {
         SetupEnemy();
         // baslangicta saldiri
+        _maxEnemyHeatlh = this.can;
     }
 
     public void Setup(int damageAmount, string situation)
     {
 
         if (damageAmount == -1)
+        {
+            floatingPoint.GetComponent<TextMeshPro>().SetText(situation);
+        }
+        else if (damageAmount == -2)
         {
             floatingPoint.GetComponent<TextMeshPro>().SetText(situation);
         }
@@ -284,7 +300,9 @@ public class EnemyManager : Enemy
             else
             {
                 Setup(-1, "Miss");
-                Instantiate(floatingPoint, _target.transform.position, Quaternion.identity);
+                GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+                healPopup.GetComponent<TextMeshPro>().color = missColor;
+                PopupManager.instance.popupList.Add(healPopup);
                 Debug.Log(_target.name + " kaçındı");
             }
 
@@ -308,8 +326,9 @@ public class EnemyManager : Enemy
 
     private void setPopup()
     {
-        GameObject popup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
-        Destroy(popup, 0.75f);
+        GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
+        healPopup.GetComponent<TextMeshPro>().color = attackColor;
+        PopupManager.instance.popupList.Add(healPopup);
     }
     private void DisableSprite(SpriteRenderer[] _array,int _index)
     {

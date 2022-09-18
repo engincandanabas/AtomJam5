@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  floatingPoint: {fileID: 1626989694447086156, guid: 686794f67b1ff2d4e8edd7434343ae6a, type: 3}
+  floatingPoint: {fileID: 1626989694447086156, guid: 89a0f28cea95e2a49b842eac5a979f0b, type: 3}
   _heroScriptable: {fileID: 11400000, guid: d996cf582ee108c49a8ab1a568e53189, type: 2}
   yakin_etki: 0
   uzak_etki: 0
@@ -113,6 +113,8 @@ MonoBehaviour:
   defans: 0
   kacinma: 0
   can: 0
+  missColor: {r: 0.36320752, g: 0.70872575, b: 1, a: 1}
+  attackColor: {r: 0.9529412, g: 0.25490198, b: 0.19215687, a: 1}
   _target: {fileID: 0}
 --- !u!114 &5213850478974049146
 MonoBehaviour:
