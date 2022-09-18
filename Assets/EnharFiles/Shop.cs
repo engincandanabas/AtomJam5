@@ -13,15 +13,22 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         priceText.text = item._price.ToString();
+        if(!PlayerPrefs.HasKey("Mouse"))
+        {
+            // oyuncu oyuna ilk defa girdi
+            PlayerPrefs.SetInt("Mouse", 3);
+        }
     }
     public void Buy()
     {
-        if (shopControl.money >= item._price && !item._was›tBought)
+        if (shopControl.Money >= item._price)
         {
-            shopControl.money = shopControl.money - item._price;
-            shopControl.moneyText.text = shopControl.money.ToString();
-            PlayerPrefs.SetInt("_Money", shopControl.money);
+            shopControl.Money -= item._price;
+            shopControl.moneyText.text = shopControl.Money.ToString();
+            shopControl.moneyMainMenuText.text = shopControl.Money.ToString();
+
             PlayerPrefs.SetInt(item._name, PlayerPrefs.GetInt(item._name,0)+1);
+            HeroesPlaceManager.instance.InitializeVariables();
             StartCoroutine(buy());
         }
         else
@@ -34,7 +41,6 @@ public class Shop : MonoBehaviour
         gameObject.GetComponent<Image>().color = Color.green;
         yield return new WaitForSeconds(1f);
         gameObject.GetComponent<Image>().color = Color.white;
-        item._was›tBought = true;
     }
     IEnumerator failbuy()
     {
@@ -48,7 +54,6 @@ public class Shop : MonoBehaviour
 public class ›tem
 {
     public int _price;
-    public bool _was›tBought;
     public int _value;
     public string _name;
 }

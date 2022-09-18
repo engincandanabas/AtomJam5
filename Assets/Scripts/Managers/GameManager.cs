@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject _bottomHeroPanel;
     public Vector3 _enabledBottomHeroPos,_disabledBottomHeroPos;
     public bool _firstRoomTriggered=false;
-    
 
+    public GameObject _followTarget;
+    public bool _isTargetSelected = false;
 
     private void Awake()
     {
@@ -30,10 +31,13 @@ public class GameManager : MonoBehaviour
     {
         if(_firstRoomTriggered)
         {
-            if(EnemySpawnManager.Instance._enemyList.Count>0 && EnemySpawnManager.Instance._enemyList[0].transform.parent==null)
+            if(_followTarget != null)
             {
-                Debug.Log("Tetiklendi");
-                Camera.main.transform.position=EnemySpawnManager.Instance._enemyList[0].transform.position+new Vector3(0,0,-10f);
+                if (EnemySpawnManager.Instance._enemyList.Count > 0 && _followTarget.transform.parent == null)
+                {
+                    Debug.Log("Tetiklendi");
+                    Camera.main.transform.position = _followTarget.transform.position + new Vector3(0, 0, -10f);
+                }
             }
         }
     }

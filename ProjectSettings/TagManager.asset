@@ -24,7 +24,7 @@ TagManager:
   - UI
   - Hero
   - Particle
-  - 
+  - Text
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: Particle
     uniqueID: 3182750049
+    locked: 0
+  - name: Door
+    uniqueID: 2474875785
     locked: 0

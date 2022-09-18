@@ -93,6 +93,7 @@ public class AreaScript : MonoBehaviour
                 SceneManager_.Instance.particle.Play();
                 targetRoom = false;
                 //
+                HeroesPlaceManager.instance.InitializeVariables();
                 GameManager.instance._bottomHeroPanel.transform.DOLocalMove(GameManager.instance._enabledBottomHeroPos, 1f);
                 
             }

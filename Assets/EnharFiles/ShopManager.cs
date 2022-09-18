@@ -6,15 +6,29 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
-    public int money;
+    public int Money
+    {
+        get
+        {
+            return PlayerPrefs.GetInt("Money", 200);
+        }
+        set
+        {
+            PlayerPrefs.SetInt("Money", value);
+        }
+    }
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI moneyMainMenuText;
+
+
 
     public GameObject shopPanel;
     public GameObject shopButton;
-
     private void Start()
     {
-        moneyText.text = money.ToString();
+        Money = Money;
+        moneyText.text = Money.ToString();
+        moneyMainMenuText.text = Money.ToString();
         shopPanel.SetActive(false);
         shopButton.SetActive(true);
     }

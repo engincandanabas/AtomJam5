@@ -8,7 +8,7 @@ public class DetectCameraFollow : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            GameManager.instance._firstRoomTriggered = true;
+            //GameManager.instance._firstRoomTriggered = true;
         }
     }
 }

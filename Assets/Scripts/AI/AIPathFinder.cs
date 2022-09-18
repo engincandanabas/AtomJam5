@@ -41,6 +41,12 @@ public class AIPathFinder : MonoBehaviour
         //check current target fight or pass
         if(_target != null && rooms.Count > 0)
         {
+            if(_roomIndex==rooms.Count-2 && !GameManager.instance._isTargetSelected)
+            {
+                GameManager.instance._followTarget = this.gameObject;
+                GameManager.instance._firstRoomTriggered = true;
+                GameManager.instance._isTargetSelected = true;
+            }
             if(_target.transform.parent.GetComponent<Room>().heroManagers.Count>0)
             {
                 this.transform.parent = _target.transform.parent.GetComponent<Room>()._enemyLayoutGroup.transform;
@@ -51,14 +57,14 @@ public class AIPathFinder : MonoBehaviour
             else
             {
                 // dusman yok yeni odaya git
-                target = rooms[_roomIndex]._enemyLayoutGroup.transform;
+                target = rooms[_roomIndex]._roomTarget.transform;
                 _roomIndex--;
             }
         }
         else
         {
             // first target
-            target=rooms[_roomIndex]._enemyLayoutGroup.transform;
+            target=rooms[_roomIndex]._roomTarget.transform;
             _roomIndex--;
         }
     }

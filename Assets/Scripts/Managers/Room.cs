@@ -16,7 +16,7 @@ public class Room : MonoBehaviour
     public int CurrentCapacity { get { return _currentCapacity; }set { _currentCapacity = value; } }
     public int CurrentPassCount { get { return _currentPassCount; }set { _currentPassCount = value; } }
 
-
+    public GameObject _roomTarget;
     public List<HeroManager> heroManagers = new List<HeroManager>();
     public List<EnemyManager> enemyManagers = new List<EnemyManager>();
 
@@ -128,7 +128,7 @@ public class Room : MonoBehaviour
             enemyManagers[i].transform.parent = null;
             // listeden cikar
             enemyManagers[i].transform.position = enemyManagers[i]._tempPos;
-            enemyManagers[i].transform.DOMove(_enemyLayoutGroup.transform.position + new Vector3(i * 0.45f, 0, 0),3f);
+            enemyManagers[i].transform.DOMove(_enemyLayoutGroup.transform.position + new Vector3(i * 0.45f, 0, 0),1f);
             // set parent
             enemyManagers[i].GetComponent<AIPathFinder>().SetTarget();
         }
