@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
+using Random = UnityEngine.Random;
 
 public class AreaScript : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class AreaScript : MonoBehaviour
     public GameObject IntantaneArea;
     public int AreaIndex = 0;
     public GameObject[] DoorList;
-    bool onBlock;
-    bool reateComplated=true;
+    bool onBlock = false;
+    bool targetRoom;
+    bool Active;
+    int soundIndex;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,12 @@ public class AreaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Create2DRay();
+        if (Active)
+        {
+
+            Create2DRay();
+
+        }
 
     }
 
@@ -33,34 +42,56 @@ public class AreaScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 1);
         if (hit.collider != null)
         {
-            if(hit.collider.CompareTag("Obstacle"))
+            if (hit.collider.CompareTag("Obstacle") || hit.collider.CompareTag("Room"))
             {
-                Debug.Log(hit.collider.gameObject.name);
                 onBlock = true;
+            }
+
+            if (hit.collider.CompareTag("TargetRoom"))
+            {
+                targetRoom = true;
             }
         }
     }
 
     public void AreaCreating()
     {
-        reateComplated = false;
+
         if (!onBlock)
         {
+            soundIndex = Random.Range(0, 3);
+            SceneManager.Instance.sources[soundIndex].Play();
+
             createdArea = Instantiate(IntantaneArea);
+
             createdArea.transform.parent = transform;
             createdArea.transform.localPosition = new Vector3(0, 0, 0);
+            SceneManager.Instance.particle.transform.position = createdArea.transform.position;
+            SceneManager.Instance.particle.Play();
             // createdArea.GetComponent<SpriteRenderer>().sprite = sprites[AreaIndex];
-
-            createdArea.transform.localScale = new Vector3(0, 0, 0);
+            Image[] img = createdArea.transform.GetChild(0).GetComponentsInChildren<Image>();
+            foreach (Image item in img)
+            {
+                item.color = new Color(1, 1, 1, 0);
+            }
+            //createdArea.transform.localScale = new Vector3(0, 0, 0);
             createdArea.transform.parent = null;
             GetComponent<Image>().enabled = false;
-            createdArea.transform.GetChild(0).gameObject.SetActive(false);
+            //createdArea.transform.GetChild(0).gameObject.SetActive(false);
             transform.parent.gameObject.SetActive(false);
-            createdArea.transform.DOScale(new Vector2(2.5f, 2.5f), 1).SetEase(Ease.OutBounce).OnComplete(() =>
+
+
+
+            //////////////////////////////////////////////
+            if (targetRoom)
             {
-                createdArea.transform.GetChild(0).gameObject.SetActive(true);
-                reateComplated = true;
-            });
+                //Hedef Odaya Ulaþýldý ve Oda Yaratýldý
+                Debug.Log("Karakterleri Yerleþtir");
+                createdArea.transform.GetChild(0).gameObject.SetActive(false);
+                SceneManager.Instance.particle.transform.position = createdArea.transform.position;
+                SceneManager.Instance.particle.Play();
+                targetRoom = false;
+            }
 
             if (this.CompareTag("Up"))
             {
@@ -78,41 +109,30 @@ public class AreaScript : MonoBehaviour
             {
                 DoorList[3].gameObject.transform.DOScale(new Vector2(.3f, .3f), .3f);
             }
-
-            // transform.GetChild(0).transform.DOScale(new Vector2(357.1428f, 357.1428f),1).SetEase(Ease.OutBounce);
-            // gm.transform.DOScale(new Vector2(714.2857f, 714.2857f),1);
-            // GetComponentInChildren<Transform>().DOScale(new Vector2(714.2857f, 714.2857f), 1);
         }
     }
     public void OpenArrow()
     {
+        Active = true;
 
-       
+        if (onBlock)
+        {
 
-        if (reateComplated) {
-
-            if (onBlock)
-            {
-
-                GetComponent<Image>().color = new Color(1f, 0.1847454f, 0.1847454f, .5f);
-                transform.GetChild(0).GetComponent<Image>().enabled = true;
-            }
-            else
-            {
-                GetComponent<Image>().color = new Color(0.4153922f, 0.8396226f, 0.3833748f, .5f);
-                transform.GetChild(0).GetComponent<Image>().enabled = true;
-            }
+            GetComponent<Image>().color = new Color(1f, 0.1847454f, 0.1847454f, .5f);
+            transform.GetChild(0).GetComponent<Image>().enabled = true;
         }
-       
-      
-        //  GetComponent<Image>().sprite = sprites[AreaIndex];
+        else
+        {
+            GetComponent<Image>().color = new Color(0.4153922f, 0.8396226f, 0.3833748f, .5f);
+            transform.GetChild(0).GetComponent<Image>().enabled = true;
+        }
+
     }
     public void CloseArrow()
     {
+        Active = false;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
-        // onArrow = false;
         GetComponent<Image>().color = new Color(1, 1, 1, 0);
-
 
     }
     //public void ScrollChangeArea()
