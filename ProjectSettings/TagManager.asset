@@ -7,6 +7,11 @@ TagManager:
   - Waypoints
   - Room
   - Door
+  - Right
+  - Down
+  - Up
+  - Left
+  - Obstacle
   layers:
   - Default
   - TransparentFX
