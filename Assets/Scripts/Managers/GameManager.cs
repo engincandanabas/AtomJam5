@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelPassUI;
     public GameObject levelFailedUI;
 
-    public GameObject _followTarget;
+    public GameObject _followTargett;
     public bool _isTargetSelected = false;
 
     private void Awake()
@@ -34,12 +34,13 @@ public class GameManager : MonoBehaviour
     {
         if(_firstRoomTriggered)
         {
-            if(_followTarget != null)
-            {
-                if (EnemySpawnManager.Instance._enemyList.Count > 0 && _followTarget.transform.parent == null)
+                if (EnemySpawnManager.Instance._enemyList.Count > 0)
+                {
+                _followTargett = EnemySpawnManager.Instance._enemyList[0].gameObject;
+                if (_followTargett != null && _followTargett.transform.parent==null)
                 {
                     Debug.Log("Tetiklendi");
-                    Camera.main.transform.position = _followTarget.transform.position + new Vector3(0, 0, -10f);
+                    Camera.main.transform.position = _followTargett.transform.position + new Vector3(0, 0, -10f);
                 }
             }
         }

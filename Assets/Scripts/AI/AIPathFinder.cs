@@ -51,7 +51,7 @@ public class AIPathFinder : MonoBehaviour
             }
             if (_roomIndex==rooms.Count-2 && !GameManager.instance._isTargetSelected)
             {
-                GameManager.instance._followTarget = this.gameObject;
+                //GameManager.instance._followTarget = this.gameObject;
                 GameManager.instance._firstRoomTriggered = true;
                 GameManager.instance._isTargetSelected = true;
             }

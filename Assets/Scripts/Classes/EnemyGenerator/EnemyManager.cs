@@ -79,6 +79,7 @@ public class EnemyManager : Enemy
                 setPopup();
                 if (this.can <= 0)
                 {
+                    EnemySpawnManager.Instance._enemyList.Remove(this);
                     this.transform.parent.transform.parent.GetComponent<Room>().enemyManagers.Remove(this);
                     ShopManager.instance.Money += 100;
                     var temp = this.transform.position;
