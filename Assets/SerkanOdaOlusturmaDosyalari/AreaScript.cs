@@ -33,7 +33,7 @@ public class AreaScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 1);
         if (hit.collider != null)
         {
-            if(hit.collider.CompareTag("Obstacle") || hit.collider.CompareTag("Room"))
+            if(hit.collider.CompareTag("Obstacle"))
             {
                 Debug.Log(hit.collider.gameObject.name);
                 onBlock = true;
