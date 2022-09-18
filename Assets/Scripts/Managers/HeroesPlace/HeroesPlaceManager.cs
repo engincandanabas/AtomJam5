@@ -43,7 +43,7 @@ public class HeroesPlaceManager : MonoBehaviour
                 {
                     if(hit.collider!=null)
                     {
-                        if(hit.collider.CompareTag("Room"))
+                        if(hit.collider.CompareTag("Room") && PathManager.instance._rooms[0].gameObject!=hit.collider.gameObject)
                         {
                             // odaya yerlestirme islemi gercekleþti
                             Debug.Log("Odaya Isteginde Bulunuldu");

@@ -41,7 +41,13 @@ public class AIPathFinder : MonoBehaviour
         //check current target fight or pass
         if(_target != null && rooms.Count > 0)
         {
-            if(_roomIndex==rooms.Count-2 && !GameManager.instance._isTargetSelected)
+            if (_roomIndex == -1)
+            { 
+                Debug.LogWarning("SAVAS BÝTTÝ");
+                return;
+
+            }
+            if (_roomIndex==rooms.Count-2 && !GameManager.instance._isTargetSelected)
             {
                 GameManager.instance._followTarget = this.gameObject;
                 GameManager.instance._firstRoomTriggered = true;
