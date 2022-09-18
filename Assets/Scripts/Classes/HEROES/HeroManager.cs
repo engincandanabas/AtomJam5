@@ -125,7 +125,6 @@ public class HeroManager : MonoBehaviour
     {
         GameObject healPopup = Instantiate(floatingPoint, transform.position, Quaternion.identity);
         healPopup.GetComponent<TextMeshPro>().color = attackColor;
-        PopupManager.instance.popupList.Add(healPopup);
     }
 
 }

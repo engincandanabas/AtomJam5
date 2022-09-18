@@ -8,7 +8,7 @@ public class PopupManager : MonoBehaviour
     public List<GameObject> popupList;
 
 
-    private void Awake()
+    public void Awake()
     {
         instance = this;
         StartCoroutine(ClearPopUp());

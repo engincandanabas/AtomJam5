@@ -67,6 +67,7 @@ public class Room : MonoBehaviour
                             }
                             else
                             {
+                                Debug.Log("saldýrýya öncesi");
                                 currentEnemy.Attack();
                                 Debug.Log("saldýrýya girdi");
                                 // attack
